@@ -36,7 +36,10 @@ func main() {
 			log.Errorln(err)
 			return
 		}
-		exec.Command("bash", bashFilePath).Run()
+		_, err := exec.Command("bash", bashFilePath).Output()
+		if err != nil {
+			log.Errorln(err)
+		}
 		common.SendMessage(common.GetTextMessage(commit), "8")
 		err = os.WriteFile(".id", []byte(commit.ID), 0644)
 	}
