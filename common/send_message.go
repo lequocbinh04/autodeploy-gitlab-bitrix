@@ -35,10 +35,10 @@ func SendMessage(text, chatId string) {
 	}
 	defer res.Body.Close()
 
-	body, err := ioutil.ReadAll(res.Body)
+	_, err = ioutil.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(string(body))
+	//fmt.Println(string(body))
 }
