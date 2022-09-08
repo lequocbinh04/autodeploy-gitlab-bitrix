@@ -45,7 +45,7 @@ func main() {
 				if err != nil {
 					log.Errorln(err)
 				}
-				common.SendMessage(common.GetTextMessage(commit), "chat178")
+				common.SendMessage(common.GetTextMessage(commit), "8")
 				err = os.WriteFile(".id", []byte(commit.ID), 0644)
 			}
 		}
